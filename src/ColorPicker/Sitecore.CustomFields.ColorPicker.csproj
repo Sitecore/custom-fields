@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF9F4307-22AC-43B6-9EA1-66BD9E05C158}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sitecore.CustomFields.ColorPicker</RootNamespace>
+    <AssemblyName>Sitecore.CustomFields.ColorPicker</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Nonshipping>true</Nonshipping>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentArt.Web.UI">
+      <HintPath>..\..\sc.lib\ComponentArt.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client">
+      <HintPath>..\..\sc.lib\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\sc.lib\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorPickerField.cs" />
+    <Compile Include="sitecore modules\shell\CustomFields\ColorPicker\Dialogs\ColorPickerDialog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="items\core\sitecore\system\Field types\Custom.item" />
+    <None Include="items\core\sitecore\system\Field types\Custom\Color Picker.item" />
+    <None Include="items\core\sitecore\system\Field types\Custom\Color Picker\Menu.item" />
+    <None Include="items\core\sitecore\system\Field types\Custom\Color Picker\Menu\Clear.item" />
+    <None Include="items\core\sitecore\system\Field types\Custom\Color Picker\Menu\Set Color.item" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sitecore modules\shell\CustomFields\ColorPicker\Dialogs\ColorPicker.aspx" />
+    <Content Include="sitecore modules\shell\CustomFields\ColorPicker\Dialogs\ColorPicker.xaml.xml" />
+    <Content Include="sitecore modules\shell\CustomFields\ColorPicker\images\checker.png" />
+    <Content Include="sitecore modules\shell\CustomFields\ColorPicker\images\crosshair.gif" />
+    <Content Include="sitecore modules\shell\CustomFields\ColorPicker\images\hue.png" />
+    <Content Include="sitecore modules\shell\CustomFields\ColorPicker\images\saturation.png" />
+    <Content Include="sitecore modules\shell\CustomFields\ColorPicker\images\slider\static.png" />
+    <Content Include="sitecore modules\shell\CustomFields\ColorPicker\style.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

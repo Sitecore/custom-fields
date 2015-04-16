@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <Sitecore.CustomFields.ColorPicker.ColorPickerDialog x:inherits="Sitecore.CustomFields.ColorPicker.Dialogs.ColorPickerDialog, Sitecore.CustomFields.ColorPicker">
+    <x:register assembly="ComponentArt.Web.UI" namespace="ComponentArt.Web.UI" />
+
+    <Sitecore.Controls.DialogPage runat="server" Icon="People/32x32/palette.png" Header="Pick the Color" Text="Pick the color you would like to use">
+      <AjaxScriptManager runat="server" />
+      <ContinuationManager runat="server" />
+      <Stylesheet runat="server" Src="/sitecore modules/Shell/CustomFields/ColorPicker/style.css"  DeviceDependant="true"/>
+      <Script runat="server" Src="/sitecore/shell/Controls/Sitecore.Runtime.js"/>
+
+      <Script runat="server">
+
+        function colorChanged(sender, eventArgs){
+        if(sender.get_selectedColor() &amp;&amp; sender.get_selectedColor().get_hex()){
+        document.getElementById('chip').style.backgroundColor = '#'+sender.get_selectedColor().get_hex();
+        document.getElementById('hexoutput').innerHTML = '#'+sender.get_selectedColor().get_hex();
+        }
+        }
+
+        function load(){
+        if (!document.getElementById('chip')) {
+        setTimeout('load()',250);
+        return;
+        }
+
+        if (ColorPicker1.get_selectedColor() &amp;&amp; ColorPicker1.get_selectedColor().get_hex()) {
+        document.getElementById('hexoutput').innerHTML ='#'+ColorPicker1.get_selectedColor().get_hex();
+        document.getElementById('chip').style.backgroundColor = document.getElementById('hexoutput').innerHTML;
+        }
+        }
+
+      </Script>
+
+
+      <GridPanel runat="server" Width="100%" Height="100%" Fixed="true">
+        <div id="result" style="display: none;">
+          [ empty ]
+        </div>
+        <Border GridPanel.Align="center" GridPanel.VAlign="top"  runat="server">
+          <ColorPicker
+                ID="ColorPicker1"
+                GridColumns="8"
+                Mode="Slider"
+                CssClass="colorpicker"
+                ColorCssClass="swatch"
+                ColorHoverCssClass="swatch-h"
+                ColorActiveCssClass="swatch-a"
+                CustomColorCssClass="swatch"
+                CustomColorHoverCssClass="swatch-h"
+                CustomColorActiveCssClass="swatch-a"
+                ColorGridCssClass="swatches"
+                CustomColorGridCssClass="customswatches"
+                runat="server"
+                ColorGridLabel="Standard Colors"
+                CustomColorGridLabel="Custom Colors"
+                ColorPlaneCssClass="plane"
+                SliderCssClass="slider"
+                BaseImageUrl="/sitecore modules/Shell/CustomFields/ColorPicker/images/"
+                CrosshairOffsetX="1"
+                CrosshairOffsetY="1">
+
+          </ColorPicker>
+
+        </Border>
+
+        <Border Class="info" runat="server">
+          <div id="chip"></div>
+          <div class="hex">
+            <div class="val">
+              <span id="hexoutput"></span>
+            </div>
+          </div>
+        </Border>
+
+      </GridPanel>
+
+    </Sitecore.Controls.DialogPage>
+
+  </Sitecore.CustomFields.ColorPicker.ColorPickerDialog>
+
+</xamlControls>

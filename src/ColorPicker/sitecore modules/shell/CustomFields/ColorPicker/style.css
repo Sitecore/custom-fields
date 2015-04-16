@@ -1,0 +1,156 @@
+a:active, a:focus
+{
+   outline: none;
+}
+
+/* Colour Picker styles */
+.plane
+{
+   border: 1px solid #999;
+   border-color: #999 #fff #fff #999;
+   margin: 0 0 10px 0;
+}
+
+.swatches
+{
+   border-spacing: 0;
+   margin: 0 0 0 -2px;
+   padding: 0;
+   width: 290px;
+   cursor: default;
+}
+.customswatches
+{
+   border-spacing: 0;
+   margin: 0 0 0 -2px;
+   padding: 0;
+   width: 290px;
+   cursor: default;
+   background-image: url("/sitecore modules/shell/customfields/colorpicker/images/checker.png");
+}
+
+.customswatches th
+{
+   background-color: #F2F2F2;
+   height: 16px;
+   line-height: 16px;
+   padding: 0 0 0 2px;
+}
+.swatches th
+{
+   height: 16px;
+   line-height: 16px;
+   padding: 0 0 0 2px;
+}
+
+.swatch
+{
+   border: 1px solid #999;
+   border-color: #999 #fff #fff #999;
+   padding: 2px;
+   width: 24px;
+   height: 20px;
+   cursor: default;
+}
+.swatch-h
+{
+   border: 1px solid #999;
+   padding: 2px;
+   width: 24px;
+   height: 20px;
+   cursor: default;
+}
+.swatch-a
+{
+   border: 1px solid #333;
+   padding: 2px;
+   width: 24px;
+   height: 20px;
+   cursor: default;
+}
+
+
+
+/* Slider styles */
+.trackCssClass
+{
+   border: 1px solid #999;
+   border-color: #999 #fff #fff #999;
+}
+.gripCssClass
+{
+   width: 34px !important;
+   height: 9px !important;
+   background: transparent url("/sitecore modules/shell/customfields/colorpicker/images/slider/static.png") no-repeat !important;
+}
+.gripCssClass:hover
+{
+   width: 34px !important;
+   height: 9px !important;
+   background: transparent url("/sitecore modules/shell/customfields/colorpicker/images/slider/static.png") no-repeat 0 -9px !important;
+}
+
+
+
+
+/* Assorted styles */
+div.br
+{
+   width: 290px;
+   height: 1px;
+   overflow: hidden;
+   float: left;
+   display: inline;
+   border-bottom: 1px solid #fff;
+   background: #b2b2b2;
+   margin: 10px 0;
+   clear: both;
+}
+
+div.info
+{
+   clear: both;
+   width: 100%;
+   height: 40px;
+}
+div.info #chip
+{
+   width: 100%;
+   height: 38px;
+   border: 1px solid #999;
+   border-color: #999 #fff #fff #999;
+   float: left;
+}
+
+div.info .hex
+{
+   padding-top: 3px;
+   text-align: center;
+   width: 100%;
+   height: 100%;
+   float: left;
+   padding: 0 0 0 10px;
+}
+
+div.info .hex .val
+{
+   padding-top: 5px;
+   width: 100%;
+   height: 20px;
+   line-height: 20px;
+   vertical-align: middle;
+}
+div.info .hex .val input
+{
+   font: 11px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+   color: #000;
+}
+
+#hexoutput
+{
+   background-color: White;
+   color: Black;
+   font-weight: bold;
+   font-size: larger;
+   vertical-align: middle;
+}
